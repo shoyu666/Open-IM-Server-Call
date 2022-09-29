@@ -1,5 +1,13 @@
 # Open-IM-Server-Call
 
+### 说明:
+由于OpenIMSDK 的视频通话功能是闭源的,阻挡了想了解视频通话功能的伙伴。
+通过分析OpenIMSDK后,给出视频通话功能的原理和服务器代码。
+客户端的实现,参考livekit。
+本功能只用于学习交流。
+
+
+
 ### 功能:
 实现 [OpenIMSDK](https://github.com/OpenIMSDK/Open-IM-Server) 的视频通话功能。
 
@@ -18,12 +26,6 @@ IM只做用户信息,好友管理,消息的透传等。视频通话是通过live
 5. 服务器接受信令,创建livekit的token,将token返回给接收方,同时透传接收方的消息给接发送方。
 6. 发起方收到OnInviteeAccepted回调。
 7. 接收方和发起方通过各自的token进入视频聊天房间(此过程是见livekit/webrtc)
-
-### 说明:
-由于OpenIMSDK 的视频通话功能是闭源的,阻挡了想了解视频通话功能的伙伴。
-通过分析OpenIMSDK后,给出视频通话功能的原理和服务器代码。
-客户端的实现,参考livekit。
-本功能只用于学习交流。
 
 
 ### 使用说明

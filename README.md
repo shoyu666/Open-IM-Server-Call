@@ -1,4 +1,4 @@
-# openim_call
+# Open-IM-Server-Call
 
 ### 功能:
 实现 [OpenIMSDK](https://github.com/OpenIMSDK/Open-IM-Server) 的视频通话功能。

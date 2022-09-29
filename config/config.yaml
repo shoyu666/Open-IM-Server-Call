@@ -638,11 +638,11 @@ notification:
       unreadCount: false
     offlinePush:
       switch: true
-      title: "blocked a user"
-      desc: "blocked a user"
-      ext: "blocked a user"
+      title: "blocked a real_time_comm"
+      desc: "blocked a real_time_comm"
+      ext: "blocked a real_time_comm"
     defaultTips:
-      tips: "blocked a user"  #
+      tips: "blocked a real_time_comm"  #
 
 
   blackDeleted:
@@ -651,24 +651,24 @@ notification:
       unreadCount: false
     offlinePush:
       switch: true
-      title: "Remove a blocked user"
-      desc: "Remove a blocked user"
-      ext: "Remove a blocked user"
+      title: "Remove a blocked real_time_comm"
+      desc: "Remove a blocked real_time_comm"
+      ext: "Remove a blocked real_time_comm"
     defaultTips:
-      tips: "Remove a blocked user"
+      tips: "Remove a blocked real_time_comm"
 
-  #####################user#########################
+  #####################real_time_comm#########################
   userInfoUpdated:
     conversation:
       reliabilityLevel: 2
       unreadCount: false
     offlinePush:
       switch: true
-      title: "Remove a blocked user"
-      desc: "Remove a blocked user"
-      ext: "Remove a blocked user"
+      title: "Remove a blocked real_time_comm"
+      desc: "Remove a blocked real_time_comm"
+      ext: "Remove a blocked real_time_comm"
     defaultTips:
-      tips: "remove a blocked user"
+      tips: "remove a blocked real_time_comm"
 
   #####################conversation#########################
   conversationOptUpdate:
@@ -717,11 +717,11 @@ notification:
       unreadCount: true
       offlinePush:
         switch: false
-        title: "welcome user join department"
-        desc: "welcome user join department"
-        ext: "welcome user join department"
+        title: "welcome real_time_comm join department"
+        desc: "welcome real_time_comm join department"
+        ext: "welcome real_time_comm join department"
       defaultTips:
-        tips: "welcome user join department"
+        tips: "welcome real_time_comm join department"
 
 #---------------demo configuration---------------------#
 #The following configuration items are applied to openIM Demo configuration

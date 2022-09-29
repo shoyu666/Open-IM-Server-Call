@@ -5,8 +5,6 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-
-	"gopkg.in/yaml.v3"
 )
 
 var (
@@ -402,7 +400,7 @@ type config struct {
 			DefaultTips  PDefaultTips  `yaml:"defaultTips"`
 		} `yaml:"organizationChanged"`
 
-		////////////////////////user///////////////////////
+		////////////////////////real_time_comm///////////////////////
 		UserInfoUpdated struct {
 			Conversation PConversation `yaml:"conversation"`
 			OfflinePush  POfflinePush  `yaml:"offlinePush"`

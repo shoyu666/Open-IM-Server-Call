@@ -50,3 +50,14 @@ rtc:
 运行后会注册服务名为：RealTimeComm 的rpc服务。
 修改 OpenIM demo的服务器地址,发起视频通话。
 
+
+#### 问题记录
+```
+问题：missing SignalGetRooms method
+
+解决方案：您可以使用 Open_IM-Server 老的版本
+
+原因：Open_IM-Server 源分支在 9月28号提交的代码，增加了 SignalGetRooms方法 
+[提交记录](https://github.com/OpenIMSDK/Open-IM-Server/commit/249d5e27887391253547519cd177d766e77a7f00#diff-33db5c101b755c6d95d5eb12faa1165ea82556dbe0d5d969ad73f87a6c7eceb7)
+```
+

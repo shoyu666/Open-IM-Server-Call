@@ -7,7 +7,7 @@
 客户端的实现,参考livekit。
 本功能只用于学习交流。
 
-真的是花钱在腾讯云部署了livekit,并用Open-IM-Server(官方9月28号之前的版本)实测过可用。
+特地花钱在腾讯云部署了livekit,并用Open-IM-Server(官方9月28号之前的版本)实测过可用。
 直接用官方demo可以测试，但是官方demo是闭源的，原理已经给出了，涉及客户端开发，可以自行实现
 官方 Open-IM-SDK-Core (客户端sdk的核心部分) 已经包含了音视频通信部分,客户端demo又是闭源的，所以客户端可以基于livekit-sdk自行实现视音频部分(参考livekit,livekit都是开源的)
 ```

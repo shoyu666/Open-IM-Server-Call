@@ -83,6 +83,11 @@ func (rpc *rtcLiveKit) Run() {
 	log.Info("", "rpc rpcChat init success")
 }
 
+//func (rpc *rtcLiveKit) SignalGetRooms(ctx context.Context, in *pbRtc.SignalGetRoomsReq, opts ...grpc.CallOption) (*pbRtc.SignalGetRoomsResp, error) {
+//	replay := pbRtc.SignalGetRoomsResp{}
+//	return &replay, nil
+//}
+
 func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.SignalMessageAssembleReq) (*pbRtc.SignalMessageAssembleResp, error) {
 	replay := pbRtc.SignalMessageAssembleResp{
 		CommonResp: &pbRtc.CommonResp{},

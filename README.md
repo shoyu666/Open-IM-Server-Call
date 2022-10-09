@@ -71,5 +71,7 @@ rtc:
 
 需要使用新版的,可以解注释 rtcLiveKit.go SignalGetRooms 方法。
 目前Open_IM-Server版本  SignalGetRooms 方法实际没有用到,可能后续版本这个方法会被用到。
+
+也可以使用 Open-IM-Server + Call 整合好的分支 https://github.com/shoyu666/Open-IM-Server
 ```
 

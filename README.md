@@ -37,6 +37,8 @@ IM只做用户信息,好友管理,消息的透传等。视频通话是通过live
 
 
 ### 使用说明
+[直接使用Open-IM-Server + Call 整合好的分支](https://github.com/shoyu666/Open-IM-Server)
+
 ##### 修改配置
 ```
 rtc:

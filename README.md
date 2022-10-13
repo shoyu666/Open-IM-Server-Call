@@ -74,10 +74,3 @@ rtc:
 
 也可以使用 Open-IM-Server + Call 整合好的分支 https://github.com/shoyu666/Open-IM-Server
 ```
-##### 问题:群聊无效
-```
-临时解决方案:可以参考issue https://github.com/shoyu666/Open-IM-Server-Call/issues/3
-
-等有空再更新
-```
-

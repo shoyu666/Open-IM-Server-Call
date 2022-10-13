@@ -83,10 +83,10 @@ func (rpc *rtcLiveKit) Run() {
 	log.Info("", "rpc rpcChat init success")
 }
 
-//func (rpc *rtcLiveKit) SignalGetRooms(ctx context.Context, in *pbRtc.SignalGetRoomsReq, opts ...grpc.CallOption) (*pbRtc.SignalGetRoomsResp, error) {
-//	replay := pbRtc.SignalGetRoomsResp{}
-//	return &replay, nil
-//}
+func (rpc *rtcLiveKit) SignalGetRooms(context.Context, *pbRtc.SignalGetRoomsReq) (*pbRtc.SignalGetRoomsResp, error) {
+	replay := pbRtc.SignalGetRoomsResp{}
+	return &replay, nil
+}
 
 func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.SignalMessageAssembleReq) (*pbRtc.SignalMessageAssembleResp, error) {
 	replay := pbRtc.SignalMessageAssembleResp{
@@ -94,13 +94,13 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		IsPass:     true,
 		SignalResp: &pbRtc.SignalResp{},
 		MsgData: &pbRtc.MsgData{
-			SenderPlatformID: constant.AndroidPlatformID,
-			MsgFrom:          constant.UserMsgType,
-			CreateTime:       utils.GetCurrentTimestampByMill(),
-			SendTime:         utils.GetCurrentTimestampByMill(),
-			SessionType:      constant.SingleChatType,
-			ContentType:      constant.SignalingNotification,
-			OfflinePushInfo:  &pbRtc.OfflinePushInfo{Title: "offlinePush"},
+			//SenderPlatformID: constant.AndroidPlatformID,
+			MsgFrom:    constant.UserMsgType,
+			CreateTime: utils.GetCurrentTimestampByMill(),
+			SendTime:   utils.GetCurrentTimestampByMill(),
+			//SessionType:      constant.SingleChatType,
+			ContentType:     constant.SignalingNotification,
+			OfflinePushInfo: &pbRtc.OfflinePushInfo{Title: "offlinePush"},
 		},
 	}
 	data, _ := proto.Marshal(req.SignalReq)
@@ -121,6 +121,8 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		replay.MsgData.ClientMsgID = utils.GetMsgID(signalInfo.Invite.OpUserID)
 		replay.MsgData.SendID = invitationInfo.InviterUserID
 		replay.MsgData.RecvID = invitationInfo.InviteeUserIDList[0]
+		replay.MsgData.SenderPlatformID = invitationInfo.PlatformID
+		replay.MsgData.SessionType = invitationInfo.SessionType
 		log.Info(req.OperationID, "SignalReq_Invite :", replay.MsgData.String(), "recv:", signalInfo.Invite.String())
 		log.Info(req.OperationID, "SignalReq_Invite", rpc.LiveURL)
 		log.Info(req.OperationID, "SignalReq_Invite", token)
@@ -139,6 +141,8 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		replay.MsgData.ClientMsgID = utils.GetMsgID(invitationInfo.InviterUserID)
 		replay.MsgData.SendID = invitationInfo.InviterUserID
 		replay.MsgData.GroupID = invitationInfo.GroupID
+		replay.MsgData.SenderPlatformID = invitationInfo.PlatformID
+		replay.MsgData.SessionType = invitationInfo.SessionType
 		log.Info(req.OperationID, "SignalReq_InviteInGroup :", replay.MsgData.String(), "recv:", signalInfo.InviteInGroup.String())
 		break
 	case *pbRtc.SignalReq_Cancel:
@@ -149,6 +153,8 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		replay.MsgData.ClientMsgID = utils.GetMsgID(invitationInfo.InviterUserID)
 		replay.MsgData.SendID = signalInfo.Cancel.OpUserID
 		replay.MsgData.RecvID = invitationInfo.InviteeUserIDList[0]
+		replay.MsgData.SenderPlatformID = invitationInfo.PlatformID
+		replay.MsgData.SessionType = invitationInfo.SessionType
 		log.Info(req.OperationID, "SignalReq_Cancel :", replay.MsgData.String(), "recv:", signalInfo.Cancel.String())
 		break
 	case *pbRtc.SignalReq_Accept:
@@ -165,6 +171,8 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		replay.MsgData.ClientMsgID = utils.GetMsgID(signalInfo.Accept.OpUserID)
 		replay.MsgData.SendID = signalInfo.Accept.OpUserID
 		replay.MsgData.RecvID = invitationInfo.InviterUserID
+		replay.MsgData.SenderPlatformID = signalInfo.Accept.OpUserPlatformID
+		replay.MsgData.SessionType = signalInfo.Accept.Invitation.SessionType
 		log.Info(req.OperationID, "SignalReq_Accept :", replay.MsgData.String(), "recv:", signalInfo.Accept.String())
 		log.Info(req.OperationID, "SignalReq_Accept", token)
 		break
@@ -179,6 +187,8 @@ func (rpc *rtcLiveKit) SignalMessageAssemble(_ context.Context, req *pbRtc.Signa
 		replay.MsgData.ClientMsgID = utils.GetMsgID(signalInfo.Reject.OpUserID)
 		replay.MsgData.SendID = signalInfo.Reject.OpUserID
 		replay.MsgData.RecvID = invitationInfo.InviterUserID
+		replay.MsgData.SenderPlatformID = signalInfo.Reject.OpUserPlatformID
+		replay.MsgData.SessionType = signalInfo.Reject.Invitation.SessionType
 		log.Info(req.OperationID, "SignalReq_Reject :", replay.MsgData.String(), "recv:", signalInfo.Reject.String())
 		break
 	default:

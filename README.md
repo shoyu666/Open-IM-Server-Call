@@ -20,7 +20,6 @@
 IM API   http://121.5.166.160:10002
 IM WS    ws://121.5.166.160:10001
 ```
-
 ### 功能:
 实现 [OpenIMSDK](https://github.com/OpenIMSDK/Open-IM-Server) 的视频通话功能。
 
@@ -90,3 +89,5 @@ rtc:
 
 也可以使用 Open-IM-Server + Call 整合好的分支 https://github.com/shoyu666/Open-IM-Server
 ```
+
+![image](https://github.com/shoyu666/Open-IM-Server-Call/blob/7787f14fd1e1c91b488b5e3a83e058a86dd7e4bb/preview.gif)

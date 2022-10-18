@@ -13,7 +13,13 @@
 官方 Open-IM-SDK-Core (客户端sdk的核心部分) 已经包含了音视频通信部分，
 但客户端demo是闭源的，所以客户端可以基于livekit-sdk自行实现视音频部分(参考livekit,livekit都是开源的)
 ```
-
+### 测试服务器地址
+```
+121.5.166.160
+登录注册  http://121.5.166.160:10004
+IM API   http://121.5.166.160:10002
+IM WS    ws://121.5.166.160:10001
+```
 
 ### 功能:
 实现 [OpenIMSDK](https://github.com/OpenIMSDK/Open-IM-Server) 的视频通话功能。

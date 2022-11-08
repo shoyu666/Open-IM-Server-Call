@@ -84,7 +84,6 @@ rtc:
 原因：Open_IM-Server 源分支在 9月28号提交的代码，增加了 SignalGetRooms方法 
 [提交记录](https://github.com/OpenIMSDK/Open-IM-Server/commit/249d5e27887391253547519cd177d766e77a7f00#diff-33db5c101b755c6d95d5eb12faa1165ea82556dbe0d5d969ad73f87a6c7eceb7)
 
-需要使用新版的,可以解注释 rtcLiveKit.go SignalGetRooms 方法。
 目前Open_IM-Server版本  SignalGetRooms 方法实际没有用到,可能后续版本这个方法会被用到。
 
 也可以使用 Open-IM-Server + Call 整合好的分支 https://github.com/shoyu666/Open-IM-Server

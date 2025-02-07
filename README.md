@@ -10,7 +10,6 @@
 官方 Open-IM-SDK-Core (客户端sdk的核心部分) 已经包含了音视频通信部分，
 但客户端demo是闭源的，所以客户端可以基于livekit-sdk自行实现视音频部分(参考livekit,livekit都是开源的)
 ```
-```
 ### 功能:
 实现 [OpenIMSDK](https://github.com/OpenIMSDK/Open-IM-Server) 的视频通话功能。
 
